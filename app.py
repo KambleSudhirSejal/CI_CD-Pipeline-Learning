@@ -7,6 +7,8 @@ import database
 
 app = Flask(__name__)
 
+print("hello flask")
+
 # mqtt config
 broker="broker.hivemq.com"
 port=1883
