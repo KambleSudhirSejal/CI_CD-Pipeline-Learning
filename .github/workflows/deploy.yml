@@ -3,12 +3,14 @@ on:
   push:
     branches:
       - main
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+
       - name: Deploy over SSH
         uses: appleboy/ssh-action@v1.0.0
         with:
@@ -17,5 +19,12 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           script: |
             cd /home/evoluzn/CI_CD-Pipeline-Learning
-            git pull origin main
+            git fetch origin
+            git reset --hard origin/main
+            pip3 install -r requirements.txt
             sudo systemctl restart demo.service
+          port: 22
+          timeout: 30s
+          command_timeout: 10m
+          proxy_port: 22
+          proxy_timeout: 30s
