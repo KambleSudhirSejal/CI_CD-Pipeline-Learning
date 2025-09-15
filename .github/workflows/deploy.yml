@@ -18,6 +18,6 @@ jobs:
           script: |
             cd /home/evoluzn/CI_CD-Pipeline-Learning
             git pull origin main
-            source venv/bin/activate(if env in created)
+   
             pip install -r requirements.txt(installation if reqiured and u made the req.txt)
             sudo systemctl restart service_name(u r service)
