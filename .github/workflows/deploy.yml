@@ -19,5 +19,5 @@ jobs:
             cd /home/evoluzn/CI_CD-Pipeline-Learning
             git pull origin main
    
-            pip install -r requirements.txt(installation if reqiured and u made the req.txt)
-            sudo systemctl restart service_name(u r service)
+            pip install -r requirements.txt
+            sudo systemctl restart service_name
