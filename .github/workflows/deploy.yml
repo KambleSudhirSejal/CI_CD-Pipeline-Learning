@@ -22,7 +22,7 @@ jobs:
             git fetch origin
             git reset --hard origin/main
             
-            sudo systemctl restart demo.service
+            sudo /bin/systemctl restart demo.service
           port: 22
           timeout: 30s
           command_timeout: 10m
