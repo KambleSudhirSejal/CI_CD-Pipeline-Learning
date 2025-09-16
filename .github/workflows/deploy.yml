@@ -21,7 +21,8 @@ jobs:
             cd /home/evoluzn/CI_CD-Pipeline-Learning
             git fetch origin
             git reset --hard origin/main
-             
+            source venv/bin/activate
+            pip install -r requirements.txt
             sudo -n /bin/systemctl restart demo.service
           port: 22
           timeout: 30s
